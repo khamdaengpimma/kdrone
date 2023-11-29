@@ -1,0 +1,39 @@
+    <!--Other product-->
+    <section class="pt-60 pb-30">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="section-title">
+                        <h2>Drone Product</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+            <% Object.values(data).forEach(function(item){ %>
+            
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                    <div class="single-tranding mb-30">
+                        <a href="/product/<%=item._id %>">
+                            <div class="tranding-pro-img">
+                                <img src=<%=item.image %> alt="">
+                            </div>
+                            <div class="tranding-pro-title">
+                                <h3><%=item.name %></h3>
+                                <h4><%=item.category%></h4>
+                            </div>
+                            <div class="tranding-pro-price">
+                                <div class="price_box">
+                                    <span class="old_price">$<%=Math.floor((item.price)+(item.price)*.3)%></span>
+                                    <span class="current_price">$<%=item.price %></span>
+                                    
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            
+            <% }) %>
+            </div>
+        </div>
+    </section>
+    <!--Other product-->

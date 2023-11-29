@@ -1,0 +1,134 @@
+<%-include("./gobal/header") %>
+
+<body>
+   
+<%-include("./gobal/navbar") %>
+
+    <!--breadcrumbs area start-->
+    <div class="breadcrumbs_area">
+        <div class="container">   
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_content">
+                        <ul>
+                            <li><a href="/">home</a></li>
+                            <li>Checkout</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>         
+    </div>
+    <!--breadcrumbs area end-->
+
+    <!--Checkout page section-->
+    <div class="Checkout_section mt-60">
+        <div class="container">
+            <div class="checkout_form">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <form action="" method="">
+                            <h3>Billing Details</h3>
+                            <div class="row">
+
+                                <div class="col-lg-6 mb-20">
+                                    <label>Full Name <span>*</span></label>
+                                    <input type="text" name="name" value="<%=user.name%>" readonly>    
+                                </div>
+
+                                <div class="col-12 mb-20">
+                                    <label>Address <span>*</span></label>
+                                    <input name=" adress" value="<%=user.adress%>" placeholder="Province,City,ward...." type="text" readonly>     
+                                </div>
+                                <div class="col-lg-6 mb-20">
+                                    <label>Phone<span>*</span></label>
+                                    <input name="phone" type="text" value="<%=user.phone %>" readonly> 
+
+                                </div> 
+                                <div class="col-lg-6 mb-20">
+                                    <label> Email Address   <span>*</span></label>
+                                    <input name="email" value="<%=user.email%>" type="text" readonly> 
+
+                                </div>
+                                <div class="order_button">
+                                    <button ><a href="/profile">Edit</a></button> 
+                                </div>    	    	    	    	    	    	    
+                            </div> 
+                        </form>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <form action="/order" method="post">
+                            <h3>Your order</h3> 
+                            <div class="order_table table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td> <%=product.name %> <strong>X1</strong></td>
+                                            <td> $<%=product.price %></td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Shipping</th>
+                                            <td><strong>$0.00</strong></td>
+                                        </tr>
+                                        <tr class="order_total">
+                                            <th>Order Total</th>
+                                            <td><strong>$<%=product.price %></strong></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>     
+                            </div>
+                                <div class="panel-default">
+                                    <input id="payment_defult" name="check_method" type="radio" data-target="createp_account"  required/>
+                                    <label for="payment_defult" data-toggle="collapse" data-target="#collapseFour" aria-controls="collapseFour">COD <img src="assets/img/icon/papyel.png" alt=""></label>
+
+                                    <div id="collapseFour" class="collapse" data-parent="#accordionExample">
+                                        <div class="card-body1">
+                                        <p>Pay via PayPal; you can pay with your credit card if you don't have a PayPal. <a href="#"></a></p> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <input type="hidden" name="name" value="<%=product.name%>">
+                                    <input type="hidden" name="id" value="<%=product._id%>">
+                                    <input type="hidden" name="total" value="<%=product.price%>">
+                                </div>
+
+                                <div class="order_button">
+                                    <button  type="submit">Buy</button> 
+                                </div>
+                            </form> 
+                            </div>      
+                </div>
+                </div> 
+            </div> 
+        </div>       
+    </div>
+    <!--Checkout page section end-->
+
+<%-include("./gobal/footer") %>
+
+
+<!-- JS
+============================================ -->
+
+
+<!-- Plugins JS -->
+<script src="assets/js/plugins.js"></script>
+
+<!-- Main JS -->
+<script src="assets/js/main.js"></script>
+
+
+
+</body>
+
+<!-- checkout.html  03:24:27 GMT -->
+</html>

@@ -1,0 +1,31 @@
+<div class="row py-4">
+    <div class="col-lg-9 mx-auto text-center">
+        <div class="table-responsive table--no-card m-b-30">
+            <table class="table table-borderless table-striped table-earning">
+                <thead>
+                    <tr>
+                        <th>date</th>
+                        <th>order ID</th>
+                        <th>name</th>
+                        <th class="text-right">total</th>
+                        <th class="text-right">status</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <% Object.values(data).forEach(function(item){ %>
+                    <tr>
+                        <td><%= item.createdAt %></td>
+                        <td><%= item._id %></td>
+                        <td><%=item.item %></td>
+                        <td class="text-right"><%=item.total %></td>
+                        <td class="text-right"><%=item.status %></td>
+                        <%}) %>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<hr>
+<br><br><br><br><br><br>
