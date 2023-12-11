@@ -35,5 +35,6 @@ app.get('/checkout/:id',index.checkout);
 app.get('/contact',index.contact)
 app.post('/search',index.search)
 app.get('/tag/:id',index.tag)
-
+app.get('/forget-password',index.contact)
+/forget-password
 app.listen(8080, () => console.log("http://localhost:8080"));
