@@ -24,7 +24,7 @@
 
 <div class="container">
     <h2 class="mb-4">Product input</h2>
-    <form>
+    <form action="/product" method="post">
         <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" class="form-control" id="name" name="name" required>
@@ -37,7 +37,7 @@
         
         <div class="form-group">
             <label for="image">Image:</label>
-            <input type="file" class="form-control-file" id="image" name="image" accept="image/*" required>
+            <input type="text" class="form-control-file" id="image" name="image" required>
         </div>
         
         <div class="form-group">
@@ -49,7 +49,6 @@
             <label for="price">Price:</label>
             <input type="number" class="form-control" id="price" name="price" step="0.01" required>
         </div>
-
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
